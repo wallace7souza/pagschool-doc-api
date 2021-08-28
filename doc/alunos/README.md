@@ -147,8 +147,17 @@ Exemplo de resultado da consulta:
 
 ```JSON
 {
-  "count": 18, // total de alunos da consulta
-  "rows": [], // Array do tipo de JSON de Aluno
-  "totalAlunosCadastrados": 18 // Total de alunos cadastrados na plataforma
+  "count": 18,
+  "rows": [],
+  "totalAlunosCadastrados": 18
 }
+```
+
+Descrição resposta:
+
+```
+count - total de alunos da consulta
+rows - Array do tipo de JSON de Aluno
+totalAlunosCadastrados - Total de alunos cadastrados na plataforma
+
 ```
