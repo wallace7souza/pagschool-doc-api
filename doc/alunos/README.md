@@ -69,4 +69,86 @@ Segue a descrição dos campos:
 |alunoResponsavelFinanceiro| :heavy_check_mark: | Valores aceitos: **true** ou **false**|
 
 
-Apesar de alguns campos não serem obrigatórios 
+Exemplo de resposta da criação de aluno:
+
+```JSON
+{
+    "possuiContratoCancelado": false,
+    "telefoneCelularWhatsapp": false,
+    "telefoneCelularResponsavelWhatsapp": false,
+    "id": 59,
+    "cpf": "32773015835",
+    "telefoneCelular": "91988244142",
+    "telefoneFixo": null,
+    "nomeAluno": "wallace souza",
+    "dataNascimento": "1984-05-30",
+    "email": "naopossui@email.com",
+    "genero": "M",
+    "cep": "66813750",
+    "logradouro": "Travessa N-5",
+    "enderecoComplemento": null,
+    "bairro": "Campina de Icoaraci (Icoaraci)",
+    "localidade": "Belém",
+    "uf": "PA",
+    "numero": "357",
+    "escola_id": 1,
+    "status": "CURSANDO",
+    "dataNascimentoResponsavel": "1953-02-13",
+    "generoResponsavel": "M",
+    "telefoneCelularResponsavel": "91988244142",
+    "cpfResponsavel": "06640044234",
+    "nomeResponsavel": "dias",
+    "nacionalidade": "BR",
+    "alunoResponsavelFinanceiro": false,
+    "updated_at": "2021-08-28T01:33:38.334Z",
+    "created_at": "2021-08-28T01:33:37.432Z"
+}
+```
+
+
+## ATUALIZAÇÃO DE ALUNO
+
+A requisição a seguir atualiza os dados de aluno na plataforma:
+
+```
+PUT - {{endpoint}}/api/aluno/update
+```
+
+Utilize o JSON de retorno da API da criação de aluno para atualizar os dados necessários.  
+
+O atributo de nome **status** pode ser atualizar com os seguinte valores: CURSANDO,FORMADO
+
+
+
+## PESQUISA DE ALUNOS
+
+A requisição a seguir pesquisa na base de alunos cadastrados.
+
+```
+GET - {{endpoint}}/api/aluno/all
+```
+
+Em conjunto com a requisição anterior, o seguintes parametro de consulta são aceitos na requisição:
+
+```
+status - Status do aluno, valor padrão 'CURSANDO', valores aceitos CURSANDO,FORMADO
+limit - Limite de resultados na consulta, valor padrão 50
+offset - Número de resultados iniciais que deve desconsiderar da consulta, valor padrão 0 
+filter - Nome ou cpf a ser consultado, valor padrão vazio
+
+```
+Exemplo de requisição
+
+```
+GET - {{endpoint}}/api/aluno/all?status=CURSANDO&limit=50&offset=0&filter=
+```
+
+Exemplo de resultado da consulta:
+
+```JSON
+{
+  "count": 18, // total de alunos da consulta
+  "rows": [], // Array do tipo de JSON de Aluno
+  "totalAlunosCadastrados": 18 // Total de alunos cadastrados na plataforma
+}
+```
