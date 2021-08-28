@@ -33,43 +33,40 @@ Exemplo de corpo da resquisição
   "localidade":"Belém",
   "uf":"PA",
   "numero":"357",
-  "status":"CURSANDO",
   "dataNascimentoResponsavel":"1953-02-13",
   "generoResponsavel":"M",
   "telefoneCelularResponsavel":"91988244142",
   "cpfResponsavel":"06640044234",
   "nomeResponsavel":"dias",
-  "nacionalidade":"BR",
   "alunoResponsavelFinanceiro":false
 }
 
 ```
-Segue a descrição dos campos :heavy_check_mark:
+Segue a descrição dos campos:
 
-:joy:
 
 | Atributo | Obrigatório | Descrição|
 | --- | ----------- |----------- |
-|cpf| -- | **Obrigatório** somente para alunos que são o próprio responsável  financeiro <br>  **Formato**: somente números|
+|cpf| -- | CPF do aluno, **Obrigatório** somente para alunos que são o próprio responsável  financeiro <br>  **Formato**: somente números|
 |telefoneCelular| não | Formato: somente números|
 |telefoneFixo| não | Formato: somente números |
-|nomeAluno| <span style="color:green">sim</span>     | Limite de 255 caracters|
+|nomeAluno| :heavy_check_mark:     | Limite de 255 caracteres|
 |dataNascimento| não | Formato: AAAA-MM-DD|
 |email| não | |
-|genero| :heavy_check_mark: | descricao|
-|cep| sim | descricao|
-|logradouro| sim | descricao|
-|enderecoComplemento| sim | descricao|
-|bairro| sim | descricao|
-|localidade| sim | descricao|
-|uf| sim | descricao|
-|numero| sim | descricao|
-|status| sim | descricao|
-|dataNascimentoResponsavel| sim | descricao|
-|generoResponsavel| sim | descricao|
-|telefoneCelularResponsavel| sim | descricao|
-|cpfResponsavel| sim | descricao|
-|nomeResponsavel| sim | descricao|
-|nacionalidade| sim | descricao|
-|alunoResponsavelFinanceiro| sim | descricao|
+|genero| não | Valores aceitos: **M** ou **F**|
+|cep| não | Formato: Somente números |
+|logradouro| não | |
+|enderecoComplemento| não |  |
+|bairro| não |  |
+|localidade| não |  |
+|uf| não |  |
+|numero| não |  |
+|dataNascimentoResponsavel| não | Formato: AAAA-MM-DD |
+|generoResponsavel| sim | Valores aceitos: **M** ou **F**  |
+|telefoneCelularResponsavel| sim | Somento números, formato DDD+NÚMERO TELEFONE |
+|cpfResponsavel| -- | **Obrigátorio** para alunos que não são os responsável financeiro |
+|nomeResponsavel| -- | **Obrigátorio** para alunos que não são os responsável financeiro |
+|alunoResponsavelFinanceiro| :heavy_check_mark: | Valores aceitos: **true** ou **false**|
 
+
+Apesar de alguns campos não serem obrigatórios 
