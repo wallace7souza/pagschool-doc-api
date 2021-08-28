@@ -128,12 +128,12 @@ A requisição a seguir pesquisa na base de alunos cadastrados.
 GET - {{endpoint}}/api/aluno/all
 ```
 
-Em conjunto com a requisição anterior, o seguintes parametro de consulta são aceitos na requisição:
+Em conjunto com a requisição anterior, os seguintes parametro de consulta são aceitos na requisição:
 
 ```
 status - Status do aluno, valor padrão 'CURSANDO', valores aceitos CURSANDO,FORMADO
 limit - Limite de resultados na consulta, valor padrão 50
-offset - Número de resultados iniciais que deve desconsiderar da consulta, valor padrão 0 
+offset - Número de resultados iniciais que devem ser desconsiderados da resposta, valor padrão 0 
 filter - Nome ou cpf a ser consultado, valor padrão vazio
 
 ```
@@ -153,7 +153,7 @@ Exemplo de resultado da consulta:
 }
 ```
 
-Descrição resposta:
+Descrição da resposta:
 
 ```
 count - total de alunos da consulta
@@ -161,3 +161,6 @@ rows - Array do tipo de JSON de Aluno
 totalAlunosCadastrados - Total de alunos cadastrados na plataforma
 
 ```
+
+
+Próximo passo: [Acessar api de Contratos](../contratos)
