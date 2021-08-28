@@ -1,7 +1,7 @@
 # **PAGSCHOOL DOC API • CONTRATOS**
 
 
-[comment]: <> (As sequintes API estão disponíveis para acesso aos contratos.  )
+As sequintes API estão disponíveis para acesso aos contratos.
 
 - Criação de contrato
 - Atualização de contrato
