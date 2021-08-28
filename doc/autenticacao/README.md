@@ -49,4 +49,4 @@ Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...eyJ0eXAiOiJKV1QiLCJhbG
 ```
 
 
-Próximo passo: [Acessar api de Alunos](./alunos)
+Próximo passo: [Acessar api de Alunos](../alunos)
