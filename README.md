@@ -10,5 +10,5 @@ Use as seguintes seções para navegar pela documentação
 - [Autenticação](./doc/autenticacao)
 - [Alunos](./doc/alunos)
 - [Contratos](./doc/contratos)
-- [Parcelas](./dooc/parcelas)
+- [Parcelas](./doc/parcelas)
 - [Conta virtual](./doc/conta-virtual)
