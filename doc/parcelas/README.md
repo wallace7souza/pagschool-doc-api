@@ -99,7 +99,7 @@ Em caso de sucesso, a requisição retorna o seguinte json
 
 A requisição a seguir gera um boleto para a uma parcela na plataforma:
 ```
-PUT - {{endpoint}}/api/parcelas-contrato/gerar-boleto-parcela/:parcelaId
+POST - {{endpoint}}/api/parcelas-contrato/gerar-boleto-parcela/:parcelaId
 ```
 
 Onde **:parcelaId** é o id da parcela a ser excluída.
