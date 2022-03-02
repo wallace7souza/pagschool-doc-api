@@ -85,7 +85,7 @@ Exemplo de corpo da resquisição
 
 A requisição a seguir excluir uma parcela na plataforma:
 ```
-PUT - {{endpoint}}/api/parcelas-contrato/delete/:parcelaId
+DELETE - {{endpoint}}/api/parcelas-contrato/delete/:parcelaId
 ```
 
 Onde **:parcelaId** é o id da parcela a ser excluída.
