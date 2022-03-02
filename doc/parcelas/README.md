@@ -117,7 +117,9 @@ Para baixar o pdf faça uma requisição para a seguinte url
 ## BAIXA MANUAL DE PARCELA
 
 A requisição a seguir realiza baixa manual de uma parcela na plataforma:
-
+```
+POST - {{endpoint}}/api/parcelas-contrato/gerar-baixa-parcela/:parcelaId
+```
 Onde **:parcelaId** é o id da parcela a ser excluída.
 
 Exemplo de corpo da resquisição
