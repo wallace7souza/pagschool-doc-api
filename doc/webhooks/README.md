@@ -3,9 +3,9 @@
 Os seguintes eventos estãos dipsoníveis para disparo de requisições:
 
 
-- Criação de acordo [>](/#criacao-acordo)
-- Status de parcela atualizado [>](/#status-parcela-atualizado)
-- Alteração de tag de devedor [>](/#alteracao-tag-devedor)
+- Criação de acordo [>](./#criacao-acordo)
+- Status de parcela atualizado [>](./#status-parcela-atualizado)
+- Alteração de tag de devedor [>](./#alteracao-tag-devedor)
 
 
 ```
