@@ -85,7 +85,7 @@ Exemplo de corpo da resquisição
 
 A requisição a seguir excluir uma parcela na plataforma:
 ```
-PUT - {{endpoint}}/api/parcelas-contrato/delete/:parcelaId
+DELETE - {{endpoint}}/api/parcelas-contrato/delete/:parcelaId
 ```
 
 Onde **:parcelaId** é o id da parcela a ser excluída.
@@ -99,7 +99,7 @@ Em caso de sucesso, a requisição retorna o seguinte json
 
 A requisição a seguir gera um boleto para a uma parcela na plataforma:
 ```
-PUT - {{endpoint}}/api/parcelas-contrato/gerar-boleto-parcela/:parcelaId
+POST - {{endpoint}}/api/parcelas-contrato/gerar-boleto-parcela/:parcelaId
 ```
 
 Onde **:parcelaId** é o id da parcela a ser excluída.
@@ -117,7 +117,9 @@ Para baixar o pdf faça uma requisição para a seguinte url
 ## BAIXA MANUAL DE PARCELA
 
 A requisição a seguir realiza baixa manual de uma parcela na plataforma:
-
+```
+POST - {{endpoint}}/api/parcelas-contrato/gerar-baixa-parcela/:parcelaId
+```
 Onde **:parcelaId** é o id da parcela a ser excluída.
 
 Exemplo de corpo da resquisição
