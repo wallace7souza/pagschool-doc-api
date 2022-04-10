@@ -12,4 +12,4 @@ Use as seguintes seções para navegar pela documentação
 - [Contratos](./doc/contratos)
 - [Parcelas](./doc/parcelas)
 - [Conta virtual](./doc/conta-virtual)
-- [Webhooks](./doc/conta-virtual)
+- [Webhooks](./doc/webhooks)
