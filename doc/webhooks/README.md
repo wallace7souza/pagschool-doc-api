@@ -8,11 +8,14 @@ Os seguintes eventos estãos dipsoníveis para disparo de requisições:
 - Alteração de tag de devedor [>](#alteracao-tag-devedor)
 
 
-```
-**ATENÇÃO**
+
+**ATENÇÃO**  
 Para efetividade dos webhooks, acione o suporte da I9 recebíveis para cadastrar 
-as urls que irão receber os eventos.
-```
+as urls que irão receber os eventos.  
+
+Todas as requisições enviam um token no header 'x-webhook-token', cujo valor é gerado pela biblioteca [hashids](https://hashids.org/).   
+A chave de validação é gerada pelo suporte da I9 e passada para a escola.
+
 
 # Criação de acordo [ # ](#criacao-acordo) 
 
@@ -30,9 +33,10 @@ Exemplo de requisição JSON:
     "cpf":"09575467345",
     "acordoId":643,
     "devedorId":12305,
-    "parcelas":[
+    "parcelas": [
       {
         "parcelaId":1683,
+        "numeroParcela": 1,
         "valor":140,
         "vencimento":"2022-04-01",
         "status":"AGUARDANDO_PAGAMENTO"
@@ -61,9 +65,11 @@ Exemplo de requisição JSON:
     "devedorId":12305,
     "parcela":{
       "parcelaId":1683,
+      "numeroParcela": 1,
       "valor":140,
       "vencimento":"2022-04-01",
-      "status":"AGUARDANDO_PAGAMENTO"
+      "status":"AGUARDANDO_PAGAMENTO",//Valores aceitos: PAGO,AGUARDANDO_PAGAMENTO,VENCIDA
+      "dataPagamento": "2022-04-01" //Valor preenchido somente quando o status for PAGO
     }
   }
 }
