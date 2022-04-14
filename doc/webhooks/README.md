@@ -73,9 +73,9 @@ Exemplo de requisição JSON:
       //Valor abaixo são preenchidos somente quando o status for PAGO
       "dataPagamento": "2022-04-01",
       "dataCompensacao": "2022-04-14",
-      "tarifaI9":1.55,
+      "tarifaI9":2.89,
       "valorPago":140,
-      "valorCliente":18.45
+      "valorCliente":137.11
     }
   }
 }
