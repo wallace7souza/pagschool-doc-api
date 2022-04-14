@@ -29,7 +29,7 @@ Exemplo de requisição JSON:
 {
   "event":"ACORDO_CRIADO",
   "data":{
-    "numeroContrato":null,
+    "numeroContrato":null, //preenchido se informado ao suporte I9
     "cpf":"09575467345",
     "acordoId":643,
     "devedorId":12305,
@@ -59,7 +59,7 @@ Exemplo de requisição JSON:
 {
   "event":"STATUS_PARCELA_ACORDO_ATUALIZADO",
   "data":{
-    "numeroContrato":null,
+    "numeroContrato":null, //preenchido se informado ao suporte I9
     "cpf":"09575467345",
     "acordoId":643,
     "devedorId":12305,
@@ -69,7 +69,13 @@ Exemplo de requisição JSON:
       "valor":140,
       "vencimento":"2022-04-01",
       "status":"AGUARDANDO_PAGAMENTO",//Valores aceitos: PAGO,AGUARDANDO_PAGAMENTO,VENCIDA
-      "dataPagamento": "2022-04-01" //Valor preenchido somente quando o status for PAGO
+      
+      //Valor abaixo são preenchidos somente quando o status for PAGO
+      "dataPagamento": "2022-04-01",
+      "dataCompensacao": "2022-04-14",
+      "tarifaI9":1.55,
+      "valorPago":140,
+      "valorCliente":18.45
     }
   }
 }
@@ -90,7 +96,7 @@ Exemplo de requisição JSON:
 {
   "event":"ALTERACAO_TAG_DEVEDOR",
   "data":{
-    "numeroContrato":null,
+    "numeroContrato":null, //preenchido se informado ao suporte I9
     "cpf":"09575467345",
     "devedorId":12305,
     "tag":"POSSÍVEL CONTATO INVÁLIDO",
