@@ -10,9 +10,9 @@ As sequintes API estão disponíveis para acesso as parcelas.
 
 
 
-## CRIAÇÃO DE CONTRATO
+## CRIAÇÃO DE PARCELA
 
-A requisição a seguir adiciona um aluno novo na plataforma:
+A requisição a seguir adiciona uma nova parcela ao contrato:
 ```
 POST - {{endpoint}}/api/parcelas-contrato/create
 ```
@@ -39,7 +39,7 @@ Segue a descrição dos campos:
 
 
 
-Exemplo de resposta da criação de contrato:
+Exemplo de resposta da criação de parcela:
 ```JSON
 {
     "diasVencida": 0,
