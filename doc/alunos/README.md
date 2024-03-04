@@ -134,7 +134,9 @@ Em conjunto com a requisição anterior, os seguintes parametro de consulta são
 status - Status do aluno, valor padrão 'CURSANDO', valores aceitos CURSANDO,FORMADO
 limit - Limite de resultados na consulta, valor padrão 50
 offset - Número de resultados iniciais que devem ser desconsiderados da resposta, valor padrão 0 
-filter - Nome ou cpf a ser consultado, valor padrão vazio
+filter - Nome a ser consultado, tanto no nome do aluno quanto no nome do responsável
+cpf - CPF do aluno, deve ser informado os 11 digitos, caso contrário retornará vazio como resposta.
+cpfResponsável - CPF do responsável, deve ser informado os 11 digitos, caso contrário retornará vazio como resposta. Pode ser usado com o paramêtro 'cpf'.
 
 ```
 Exemplo de requisição
