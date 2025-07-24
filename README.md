@@ -1,6 +1,6 @@
 # **PAGSCHOOL DOC API**
 
-Documentação para a integração com a api de gestão de alunos,contratos e parcelas da solução **pagschool**.
+Documentação para a integração com a api de gestão de alunos, contratos e parcelas da solução **pagschool**.
 
 Toda requisição para **{{endpoint}}** deve adicionar o **header** 'Content-type' com valor 'application/json'.
 
