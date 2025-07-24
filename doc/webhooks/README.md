@@ -29,37 +29,4 @@ Exemplo de requisição JSON:
 }
 ```
 
-OBS: Segue abaixo um exemplo de página em .php para recebimento dos dados enviados pelo Webhook. A adaptação deve ocorrer conforme seu ambiente.
 
-
-```JSON
-<?php
-header("Access-Control-Allow-Origin: *");
-header('Cache-Control: no-cache, must-revalidate'); 
-header("Content-Type: text/plain; charset=UTF-8");
-header("HTTP/1.1 200 OK");
-$dados = file_get_contents("php://input");
-
-//DECODE OS DADOS
-$dados_decode = json_decode($dados);
-
-if(is_numeric($dados_decode->id) && !empty($dados_decode->id)){
-    //INSTANCIO A CONEXÃO E AUTOLOAD
-    require_once('../conexao.php');
-    require_once('autoload.php');
-    
-    //CLASS
-    $Banco = new escola\Bancos($con, 'Pagschool');
-    $Parcela = new financeiro\Parcelas($con);
-    
-    //VERIFICA SE O PAGSCHOOL TA ATIVO
-    if($Banco->statusPagSchool === '1'){
-        $baixa = $Parcela->DarBaixa($dados_decode->id, 'PAGO', $dados_decode->dataPagamento, $dados_decode->valorPago, 'Baixa automática', 'DINHEIRO');
-    }
-
-}else{
-    http_response_code(401);
-    exit;
-}
-
-```
