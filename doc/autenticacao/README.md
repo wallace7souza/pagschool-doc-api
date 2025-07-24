@@ -12,8 +12,6 @@ Corpo requisição:
 }
 ```
 
-Para cadastro de usuário, informe um e-mail válido e uma senha para o suporte da inove(suporte@i9escola.com.br).
-
 A respostas da requisição de autenticação se dá no formato **json** como a seguir:
 
 ```json
@@ -42,7 +40,7 @@ A respostas da requisição de autenticação se dá no formato **json** como a 
 ```
 
 Além dos dados relativos ao usuário logado, o atributo **token** é retornado. Com o valor do token, adicione ele no header
-nas requisições de para as APIs de **aluno,contratos,parcelas e conta virtual.**
+de **TODAS AS REQUSIÇÕES** para as APIs de **aluno,contratos, parcelas e conta virtual.**
 
 ```code
 Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
