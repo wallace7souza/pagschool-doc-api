@@ -1,6 +1,6 @@
 # **PAGSCHOOL DOC API • WEBHOOKS**
 
-Os seguintes eventos estãos dipsoníveis para disparo de requisições:
+Os seguintes eventos estãos disponíveis para disparo de requisições:
 
 - Atualização de Status de Parcela de contrato
 
@@ -28,5 +28,4 @@ Exemplo de requisição JSON:
     "contrato_id": 60011,
 }
 ```
-
 
