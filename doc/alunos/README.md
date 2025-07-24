@@ -64,8 +64,8 @@ Segue a descrição dos campos:
 |dataNascimentoResponsavel| Não | Torna-se obrigatório se o aluno não for o responsável financeiro <br> Formato: AAAA-MM-DD |
 |generoResponsavel| Não | Valores aceitos: **M** ou **F**  |
 |telefoneCelularResponsavel| Não | Torna-se obrigatório se o aluno não for o responsável financeiro **Formato**: DDD+NÚMERO TELEFONE, SEMPRE 11 DÍGITOS|
-|cpfResponsavel| -- | Não | Torna-se obrigatório se o aluno não for o responsável financeiro |
-|nomeResponsavel| -- | Não | Torna-se obrigatório se o aluno não for o responsável financeiro |
+|cpfResponsavel| Não | Torna-se obrigatório se o aluno não for o responsável financeiro |
+|nomeResponsavel| Não | Torna-se obrigatório se o aluno não for o responsável financeiro |
 |alunoResponsavelFinanceiro| **Sim** | Valores aceitos: **true** ou **false**|
 
 
