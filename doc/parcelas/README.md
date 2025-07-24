@@ -121,12 +121,14 @@ como o atributo **numeroBoleto**.
 
 ## GERAÇÃO DE PDF ÚNICO DE PARCELA
 
-OBS: É necessário já possuir um boleto GERADO na parcela para que a requisição funcione. 
+OBS: É necessário já possuir um boleto **GERADO** na parcela para que a url funcione. 
 
-Para baixar o PDF faça uma requisição para a seguinte url
+Para baixar o PDF, componha a URL da seguinte forma:
 ```
-{{endpooint}}/api/parcelas-contrato/pdf/:parcelaId/:nossoNumero
+{{endpoint}}/api/parcelas-contrato/pdf/:parcelaId/:nossoNumero
 ```
+Onde **:parcelaId** é o id da parcela e o **:nossoNumero** é o valor que retornou anteriormente quando gerou o boleto da parcela.
+
 
 ## GERAÇÃO DE PDF de todas as parcelas
 
@@ -146,7 +148,7 @@ Exemplo de resposta:
 
 A requisição retorna o nome do arquivo. Com este nome, baixe o PDF pela seguinte URL:
 
-{{endpoint}}/api/contrato/boletos-pdf/<RANDO_INTEGER>carne-aluno-teste.pdf
+{{endpoint}}/api/contrato/boletos-pdf/<RANDO_INTEGER>/carne-aluno-teste.pdf
 
 <RANDO_INTEGER> é qualquer número inteiro, somente para evitar cache do navegador.
 
