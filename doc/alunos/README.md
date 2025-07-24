@@ -47,25 +47,25 @@ Segue a descrição dos campos:
 
 | Atributo | Obrigatório | Descrição|
 | --- | ----------- |----------- |
-|cpf| -- | CPF do aluno, **Sim** Somente para alunos que são o próprio responsável  financeiro <br>  **Formato**: Somente números|
-|telefoneCelular| **Sim** | **Formato**: Somente números, SEMPRE 11 DÍGITOS|
+|cpf|**Sim**| **Formato**: Somente números|
+|telefoneCelular| **Sim** | **Formato**: DDD+NÚMERO TELEFONE, SEMPRE 11 DÍGITOS|
 |telefoneFixo| não | **Formato**: Somente números |
 |nomeAluno| **Sim** | Limite de 255 caracteres|
-|dataNascimento| **Sim** | Formato: AAAA-MM-DD|
+|dataNascimento| **Sim** | **Formato**: AAAA-MM-DD|
 |email| **Sim** | |
 |genero| **Sim** | Valores aceitos: **M** ou **F**|
 |cep| **Sim** | **Formato**: Somente números |
 |logradouro| **Sim** | |
-|enderecoComplemento| não |  |
+|enderecoComplemento| Não |  |
 |bairro| **Sim** |  |
 |localidade| **Sim** |  |
 |uf| **Sim** |  | **Formato**: 'UF' Ex: SP, SC, PR
 |numero| **Sim** |  |
-|dataNascimentoResponsavel| não | Torna-se obrigatório se o aluno não for o responsável financeiro <br> Formato: AAAA-MM-DD |
-|generoResponsavel| não | Valores aceitos: **M** ou **F**  |
-|telefoneCelularResponsavel| não | Torna-se obrigatório se o aluno não for o responsável financeiro **Formato**: Somento números, formato DDD+NÚMERO TELEFONE |
-|cpfResponsavel| -- | não | Torna-se obrigatório se o aluno não for o responsável financeiro |
-|nomeResponsavel| -- | não | Torna-se obrigatório se o aluno não for o responsável financeiro |
+|dataNascimentoResponsavel| Não | Torna-se obrigatório se o aluno não for o responsável financeiro <br> Formato: AAAA-MM-DD |
+|generoResponsavel| Não | Valores aceitos: **M** ou **F**  |
+|telefoneCelularResponsavel| Não | Torna-se obrigatório se o aluno não for o responsável financeiro **Formato**: DDD+NÚMERO TELEFONE, SEMPRE 11 DÍGITOS|
+|cpfResponsavel| -- | Não | Torna-se obrigatório se o aluno não for o responsável financeiro |
+|nomeResponsavel| -- | Não | Torna-se obrigatório se o aluno não for o responsável financeiro |
 |alunoResponsavelFinanceiro| **Sim** | Valores aceitos: **true** ou **false**|
 
 
