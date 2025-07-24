@@ -1,17 +1,17 @@
 # **PAGSCHOOL DOC API • ALUNOS**
 
 
-As sequintes API estão disponíveis para acesso aos alunos.
+As sequintes API estão disponíveis para a parte de Alunos.
 
 - Criação de aluno
-- Atualização de aluno 
-- Pesquisa de alunos
+- Atualização de dados do aluno
+- Pesquisa de aluno
 
 
 
 ## CRIAÇÃO DE ALUNO  
 
-A requisição a seguir adiciona um aluno novo na plataforma:
+A requisição a seguir adiciona um aluno novo na plataforma PagSchool:
 ```
 POST - {{endpoint}}/api/aluno/new
 ```
@@ -116,7 +116,7 @@ PUT - {{endpoint}}/api/aluno/update
 
 Utilize o JSON de retorno da API da criação de aluno para atualizar os dados necessários.  
 
-O atributo de nome **status** pode ser atualizar com os seguinte valores: CURSANDO,FORMADO
+O atributo de nome **status** pode ser atualizar com os seguinte valores: CURSANDO, FORMADO
 
 
 
