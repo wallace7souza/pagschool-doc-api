@@ -6,13 +6,18 @@ As sequintes API estão disponíveis para acesso as parcelas.
 - Atualização de parcela
 - Exclusão de parcela
 - Geração de boleto de parcela
+- Gerar PDF único de parcela
+- Gerar PDF de todas as parcelas de um contrato
 - Baixa manual de parcela
+
 
 
 
 ## CRIAÇÃO DE PARCELA
 
 A requisição a seguir adiciona uma nova parcela ao contrato:
+
+OBS: As parcelas originalmente são criadas juntamente do contrato. Esta requisição serve para criação individual de uma parcela em um contrato já criado.
 ```
 POST - {{endpoint}}/api/parcelas-contrato/create
 ```
@@ -66,6 +71,9 @@ Exemplo de resposta da criação de parcela:
 ## ATUALIZAÇÃO DE PARCELA
 
 A requisição a seguir atualiza uma parcela na plataforma:
+
+OBS: A alteração só será permitida em parcelas ainda não pagas.
+
 ```
 PUT - {{endpoint}}/api/parcelas-contrato/update
 ```
@@ -84,6 +92,9 @@ Exemplo de corpo da resquisição
 ## EXCLUSÃO DE PARCELA
 
 A requisição a seguir excluir uma parcela na plataforma:
+
+OBS: A Exclusão só poderá ocorrer em parcelas que não possuem ocorrências de cobranças, ou seja, recém criadas. Qualquer outra alteração, deve ser comunicada à gestão da PagSchool.
+
 ```
 DELETE - {{endpoint}}/api/parcelas-contrato/delete/:parcelaId
 ```
@@ -102,16 +113,42 @@ A requisição a seguir gera um boleto para a uma parcela na plataforma:
 POST - {{endpoint}}/api/parcelas-contrato/gerar-boleto-parcela/:parcelaId
 ```
 
-Onde **:parcelaId** é o id da parcela a ser excluída.
+Onde **:parcelaId** é o id da parcela a ser gerado o boleto.
 
 Em caso de sucesso, um JSON de parcela é retornado, com o atributo **nossoNumero** preenchido assim  
 como o atributo **numeroBoleto**.
 
-Para baixar o pdf faça uma requisição para a seguinte url
+
+## GERAÇÃO DE PDF ÚNICO DE PARCELA
+
+OBS: É necessário já possuir um boleto GERADO na parcela para que a requisição funcione. 
+
+Para baixar o PDF faça uma requisição para a seguinte url
 ```
 {{endpooint}}/api/parcelas-contrato/pdf/:parcelaId/:nossoNumero
 ```
 
+## GERAÇÃO DE PDF de todas as parcelas
+
+Faça uma requisição com o id do contrato da seguinte forma:
+
+```
+GET - {{endpoint}}/api/contrato/gerar-carne-boletos/:contratoId
+```
+Onde **:contratoId** é o id do contrato já criado que deseja coletar todos os boletos.
+
+Exemplo de resposta:
+```JSON
+{
+    "file": "carne-aluno-teste.pdf"
+}
+```
+
+A requisição retorna o nome do arquivo. Com este nome, baixe o PDF pela seguinte URL:
+
+{{endpoint}}/api/contrato/boletos-pdf/<RANDO_INTEGER>carne-aluno-teste.pdf
+
+<RANDO_INTEGER> é qualquer número inteiro, somente para evitar cache do navegador.
 
 
 ## BAIXA MANUAL DE PARCELA
@@ -120,7 +157,7 @@ A requisição a seguir realiza baixa manual de uma parcela na plataforma:
 ```
 POST - {{endpoint}}/api/parcelas-contrato/gerar-baixa-parcela/:parcelaId
 ```
-Onde **:parcelaId** é o id da parcela a ser excluída.
+Onde **:parcelaId** é o id da parcela a ser baixada.
 
 Exemplo de corpo da resquisição
 ```JSON
@@ -132,7 +169,7 @@ Exemplo de corpo da resquisição
 Descrição dos atributos da requisição:
 
     valorPago: Valor em reais, referente ao valor pago, formato float.
-    dataPagamento: Data da realização da baixa de parcela.
+    dataPagamento: Data da realização da baixa de parcela. (OBS: Sempre fornecer a data do dia em que está baixando). 
 
 
 
