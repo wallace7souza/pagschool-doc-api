@@ -3,8 +3,8 @@
 
 As sequintes API estão disponíveis para acesso aos detalhes de conta virtual.
 
-- Informações da conta virutal
-- Solicitação de saque da conta virtual
+- Informações da Conta Virtual
+- Solicitação de Saque da Conta Virtual
 
 
 
@@ -15,7 +15,7 @@ A requisição a seguir retorna os dados referente a sua conta virtual:
 GET - {{endpoint}}/api/conta-virtual/account-info/:codigoEscola
 ```
 
-Onde **:codigoEscola** é um valor criado pela i9 referente ao seu cadastro. 
+Onde **:codigoEscola** é um valor criado pela i9 referente ao seu cadastro. Lembre-se que este código retorna em Json na sua primeira requisição de autenticação, juntamente do Token.
 
 Exemplo de resposta da resquisição
 ```JSON
@@ -49,7 +49,9 @@ Exemplo de resposta da resquisição
 
 ## SOLICITAÇÃO DE SAQUE DA CONTA VIRTUAL
 
-A requisição a seguir retorna os dados referente a sua conta virtual:
+A requisição a seguir possibilita o **SAQUE** para os dados bancários já previamente cadastrados:
+(Em caso de mais de uma conta cadastrada, recomendamos solicitar diretamente no painel PagSchool)
+
 ```
 POST - {{endpoint}}/api/conta-virtual/solicitar-saque
 ```
