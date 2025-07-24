@@ -47,26 +47,26 @@ Segue a descrição dos campos:
 
 | Atributo | Obrigatório | Descrição|
 | --- | ----------- |----------- |
-|cpf| -- | CPF do aluno, **Obrigatório** somente para alunos que são o próprio responsável  financeiro <br>  **Formato**: somente números|
-|telefoneCelular| **Obrigatório** | Formato: somente números|
+|cpf| -- | CPF do aluno, **Sim** somente para alunos que são o próprio responsável  financeiro <br>  **Formato**: somente números|
+|telefoneCelular| **Sim** | Formato: somente números|
 |telefoneFixo| não | Formato: somente números |
-|nomeAluno| :heavy_check_mark:     | Limite de 255 caracteres|
-|dataNascimento| **Obrigatório** | Formato: AAAA-MM-DD|
-|email| **Obrigatório** | |
-|genero| **Obrigatório** | Valores aceitos: **M** ou **F**|
-|cep| **Obrigatório** | Formato: Somente números |
-|logradouro| **Obrigatório** | |
+|nomeAluno| **Sim** | Limite de 255 caracteres|
+|dataNascimento| **Sim** | Formato: AAAA-MM-DD|
+|email| **Sim** | |
+|genero| **Sim** | Valores aceitos: **M** ou **F**|
+|cep| **Sim** | Formato: Somente números |
+|logradouro| **Sim** | |
 |enderecoComplemento| não |  |
-|bairro| **Obrigatório** |  |
-|localidade| **Obrigatório** |  |
-|uf| **Obrigatório** |  |
-|numero| **Obrigatório** |  |
+|bairro| **Sim** |  |
+|localidade| **Sim** |  |
+|uf| **Sim** |  |
+|numero| **Sim** |  |
 |dataNascimentoResponsavel| não | Formato: AAAA-MM-DD |
 |generoResponsavel| sim | Valores aceitos: **M** ou **F**  |
 |telefoneCelularResponsavel| sim | Somento números, formato DDD+NÚMERO TELEFONE |
 |cpfResponsavel| -- | **Obrigátorio** para alunos que não são os responsável financeiro |
 |nomeResponsavel| -- | **Obrigátorio** para alunos que não são os responsável financeiro |
-|alunoResponsavelFinanceiro| :heavy_check_mark: | Valores aceitos: **true** ou **false**|
+|alunoResponsavelFinanceiro| **Sim** | Valores aceitos: **true** ou **false**|
 
 
 Exemplo de resposta da criação de aluno:
