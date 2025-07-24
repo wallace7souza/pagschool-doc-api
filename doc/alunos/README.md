@@ -48,19 +48,19 @@ Segue a descrição dos campos:
 | Atributo | Obrigatório | Descrição|
 | --- | ----------- |----------- |
 |cpf| -- | CPF do aluno, **Obrigatório** somente para alunos que são o próprio responsável  financeiro <br>  **Formato**: somente números|
-|telefoneCelular| não | Formato: somente números|
+|telefoneCelular| **Obrigatório** | Formato: somente números|
 |telefoneFixo| não | Formato: somente números |
 |nomeAluno| :heavy_check_mark:     | Limite de 255 caracteres|
-|dataNascimento| não | Formato: AAAA-MM-DD|
-|email| não | |
-|genero| não | Valores aceitos: **M** ou **F**|
-|cep| não | Formato: Somente números |
-|logradouro| não | |
+|dataNascimento| **Obrigatório** | Formato: AAAA-MM-DD|
+|email| **Obrigatório** | |
+|genero| **Obrigatório** | Valores aceitos: **M** ou **F**|
+|cep| **Obrigatório** | Formato: Somente números |
+|logradouro| **Obrigatório** | |
 |enderecoComplemento| não |  |
-|bairro| não |  |
-|localidade| não |  |
-|uf| não |  |
-|numero| não |  |
+|bairro| **Obrigatório** |  |
+|localidade| **Obrigatório** |  |
+|uf| **Obrigatório** |  |
+|numero| **Obrigatório** |  |
 |dataNascimentoResponsavel| não | Formato: AAAA-MM-DD |
 |generoResponsavel| sim | Valores aceitos: **M** ou **F**  |
 |telefoneCelularResponsavel| sim | Somento números, formato DDD+NÚMERO TELEFONE |
