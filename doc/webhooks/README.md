@@ -2,106 +2,64 @@
 
 Os seguintes eventos estãos dipsoníveis para disparo de requisições:
 
-
-- Criação de acordo [>](#criacao-acordo)
-- Status de parcela atualizado [>](#status-parcela-atualizado)
-- Alteração de tag de devedor [>](#alteracao-tag-devedor)
-
+- Atualização de Status de Parcela de contrato
 
 
 **ATENÇÃO**  
-Para efetividade dos webhooks, acione o suporte da I9 recebíveis para cadastrar 
-as urls que irão receber os eventos.  
+Para efetividade dos webhooks, acione o suporte da I9 recebíveis para cadastrar a url que irá receber os eventos.  
 
-Todas as requisições enviam um token no header 'x-webhook-token', cujo valor é gerado pela biblioteca [hashids](https://hashids.org/).   
-A chave de validação é gerada pelo suporte da I9 e passada para a escola.
-
-
-# Criação de acordo [ # ](#criacao-acordo) 
-
-Método: POST  
-
-Campo numeroContrato: Esse campo representa o número de contrato no sistema do cliente, para melhor integração, acione o suporte da I9 e informe o valor do contrato.
-
-Exemplo de requisição JSON:
-
-```JSON
-{
-  "event":"ACORDO_CRIADO",
-  "data":{
-    "numeroContrato":null, //preenchido se informado ao suporte I9
-    "cpf":"09575467345",
-    "acordoId":643,
-    "devedorId":12305,
-    "parcelas": [
-      {
-        "parcelaId":1683,
-        "numeroParcela": 1,
-        "valor":140,
-        "vencimento":"2022-04-01",
-        "status":"AGUARDANDO_PAGAMENTO"
-      }
-    ]
-  }
-}
-```
 
 
 # Status de parcela atualizado [ # ](#status-parcela-atualizado) 
 
 Método: POST  
 
-Campo numeroContrato: Esse campo representa o número de contrato no sistema do cliente, para melhor integração, acione o suporte da I9 e informe o valor do contrato.
-
 Exemplo de requisição JSON:
 
 ```JSON
 {
-  "event":"STATUS_PARCELA_ACORDO_ATUALIZADO",
-  "data":{
-    "numeroContrato":null, //preenchido se informado ao suporte I9
-    "cpf":"09575467345",
-    "acordoId":643,
-    "devedorId":12305,
-    "parcela":{
-      "parcelaId":1683,
-      "numeroParcela": 1,
-      "valor":140,
-      "vencimento":"2022-04-01",
-      "status":"AGUARDANDO_PAGAMENTO",//Valores aceitos: PAGO,AGUARDANDO_PAGAMENTO,VENCIDA
-      
-      //Valor abaixo são preenchidos somente quando o status for PAGO
-      "dataPagamento": "2022-04-01",
-      "dataCompensacao": "2022-04-14",
-      "tarifaI9":2.89,
-      "valorPago":140,
-      "valorCliente":137.11
+    "id": 1242236, // id da parcela
+    "valor": 35,
+    "valorPago": 20,
+    "numeroBoleto": "74891160745953052602507128531063696770000003500",
+    "vencimento": "2024-04-05",
+    "dataPagamento": "2024-04-05",
+    "nossoNumero": "607595305",
+    "contrato_id": 60011,
+}
+```
+
+OBS: Segue abaixo um exemplo de página em .php para recebimento dos dados enviados pelo Webhook. A adaptação deve ocorrer conforme seu ambiente.
+
+
+```JSON
+<?php
+header("Access-Control-Allow-Origin: *");
+header('Cache-Control: no-cache, must-revalidate'); 
+header("Content-Type: text/plain; charset=UTF-8");
+header("HTTP/1.1 200 OK");
+$dados = file_get_contents("php://input");
+
+//DECODE OS DADOS
+$dados_decode = json_decode($dados);
+
+if(is_numeric($dados_decode->id) && !empty($dados_decode->id)){
+    //INSTANCIO A CONEXÃO E AUTOLOAD
+    require_once('../conexao.php');
+    require_once('autoload.php');
+    
+    //CLASS
+    $Banco = new escola\Bancos($con, 'Pagschool');
+    $Parcela = new financeiro\Parcelas($con);
+    
+    //VERIFICA SE O PAGSCHOOL TA ATIVO
+    if($Banco->statusPagSchool === '1'){
+        $baixa = $Parcela->DarBaixa($dados_decode->id, 'PAGO', $dados_decode->dataPagamento, $dados_decode->valorPago, 'Baixa automática', 'DINHEIRO');
     }
-  }
+
+}else{
+    http_response_code(401);
+    exit;
 }
+
 ```
-
-
-
-# Alteração de tag de devedor [ # ](#alteracao-tag-devedor)
-
-Método: POST  
-
-Campo numeroContrato: Esse campo representa o número de contrato no sistema do cliente, para melhor integração, acione o suporte da I9 e informe o valor do contrato.
-
-
-Exemplo de requisição JSON:
-
-```JSON
-{
-  "event":"ALTERACAO_TAG_DEVEDOR",
-  "data":{
-    "numeroContrato":null, //preenchido se informado ao suporte I9
-    "cpf":"09575467345",
-    "devedorId":12305,
-    "tag":"POSSÍVEL CONTATO INVÁLIDO",
-    "tagDescricao":"Refere-se ao contato inválido ou não existente. "
-  }
-}
-```
-
