@@ -40,7 +40,7 @@ A respostas da requisição de autenticação se dá no formato **json** como a 
 ```
 
 Além dos dados relativos ao usuário logado, o atributo **token** é retornado. Com o valor do token, adicione ele no header
-de **TODAS AS REQUSIÇÕES** para as APIs de **aluno,contratos, parcelas e conta virtual.**
+de **TODAS AS REQUISIÇÕES** para as APIs de **aluno,contratos, parcelas e conta virtual.**
 
 ```code
 Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
