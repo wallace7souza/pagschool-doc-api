@@ -9,6 +9,7 @@ As sequintes API estão disponíveis para acesso as parcelas.
 - Gerar PDF único de parcela
 - Gerar PDF de todas as parcelas de um contrato
 - Baixa manual de parcela
+- Parcelas pagas por dia
 
 
 
@@ -174,5 +175,35 @@ Descrição dos atributos da requisição:
     dataPagamento: Data da realização da baixa de parcela. (OBS: Sempre fornecer a data do dia em que está baixando). 
 
 
+## Parcelas pagas por dia
 
-Próximo passo: [Acessar api de cotna virtual](../conta-virtual)
+Retorna as parcelas de contrato cuja **data de pagamento** é exatamente igual à data informada.
+
+
+```
+GET - {{endpoint}}/api/parcelas-contrato/data-pagamento/:dataPagamento
+```
+### Parâmetros
+
+| Parâmetro | Local | Obrigatório | Formato | Descrição |
+|---|---|---|---|---|
+| `dataPagamento` | path | Sim | `YYYY-MM-DD` | Data de pagamento exata a ser consultada. |
+
+Endpoint autenticado. Envie o JWT na forma:
+
+- Header: `Authorization: JWT <token>`
+### Resposta `200 OK`
+
+Array de parcelas ordenado por `vencimento` em ordem crescente. Cada item traz o `Contrato` com `Aluno` e `Escola` aninhados.
+Quando não há parcelas na data, a resposta é um array vazio (`[]`) com status `200`.
+
+### Erros
+
+| Status | Corpo | Quando |
+|---|---|---|
+| `400` | `{"message": "Parametro 'dataPagamento' invalido. Formato esperado: YYYY-MM-DD."}` | Data fora do formato `YYYY-MM-DD` ou data inexistente (ex.: `2025-02-31`). |
+| `400` | `{"message": "Usuário não autorizado."}` | Usuário não-`ADMIN` sem `codigoEscola` no token. |
+| `401` | — | Token ausente, inválido, expirado ou invalidado por troca de senha. |
+| `500` | raw error do service/Sequelize | Falha inesperada na consulta. |
+
+Próximo passo: [Acessar api de conta virtual](../conta-virtual)
